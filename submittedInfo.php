@@ -40,6 +40,11 @@
 				</p>
 			</div>
 
+			<div>
+				<form action="connect.php" method="GET">
+					<input type="submit" value="Test your connection"/>
+			</div>
+
 
 				<div id = "footer"></div>
 
