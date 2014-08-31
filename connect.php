@@ -1,12 +1,17 @@
 <?php
 
-mysql_connect("localhost:8888", "root", "root") or die("Error connecting to database: " . mysql_error());
+require 'app_config.php';
+
+
+mysql_connect(DATABASE_HOST, DATABASE_USERNAME, DATABASE_PASSWORD) 
+	or die("Error connecting to database: " . mysql_error());
 
 	echo "Connected to MySQL!<br>";
 
-mysql_select_db("project") or die("Error selecting the database project: " . mysql_error());
+mysql_select_db(DATABASE_NAME) 
+	or die("Error selecting the database: " . DATABASE_NAME . mysql_error());
 
-	echo "You are using database <strong>project</strong>!<br>";
+	echo "You are using database <strong>" . DATABASE_NAME . "</strong>!<br>";
 
 $result = mysql_query("SHOW TABLES;");
 
