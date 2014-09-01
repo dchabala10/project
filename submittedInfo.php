@@ -1,4 +1,7 @@
 <?php
+
+	$connection = mysqli_connect('localhost', 'root', 'root', 'project') or die("Error " . mysqli_error($connection));
+
 	
 	$first_name = trim($_REQUEST['first_name']);
 	$last_name = trim($_REQUEST['last_name']);
@@ -20,6 +23,19 @@
 			$twitter_url = $twitter_url . substr($twitter_handle, $position1 + 1);
 		}
 
+
+
+
+	$firstname = mysqli_real_escape_string($connection, $_POST['first_name']);
+	$lastname = mysqli_real_escape_string($connection, $_POST['last_name']);
+	$email = mysqli_real_escape_string($connection, $_POST['email']);
+	$facebook_url = mysqli_real_escape_string($connection, $_POST['facebook_url']);
+	$twitter_handle = mysqli_real_escape_string($connection, $_POST['twitter_handle']);
+
+
+	$query = "INSERT INTO users (first_name, last_name, email, facebook_url, twitter_handle) VALUES ('{$firstname}', '{$lastname}', '{$email}', '{$facebook_url}', '{$twitter_handle}')";
+
+	$result = $connection->query($query);
 ?>
 
 <!DOCTYPE html>

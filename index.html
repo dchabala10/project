@@ -4,19 +4,43 @@
 		<title>Title!</title>
 	</head>
 		<body>	
-			<div id = "header"><h1>Learning some PHP and MySQL</h1></div>
-			<div id = "emotion">Programming!</div>
+			<div id = "header"><h1>DanBook</h1></div>
+			<div id = "emotion">A place to express yourself</div>
 
 			<div id = "content">
 				<h1>Bienvenidos!</h1>
-				<p>So, you probably know already that I want to learn more about programming</p>
-				<p>My name is Dan, what is yours?</p>
+				<p>Click below!</p>
 
-				<form action = "sayHelloWeb.php" method = "POST">
-					<p><i>Enter your name here: </i><input type = "text" name = "name"/></p>
-					<p><input type = "submit" value = "Say Hello"/></p>
 
+			<div>
+				<form method = "POST" action = "login.php">
+					<label for = "username">Username</label>
+					<input type = "text" name = "username"/>
+
+					<label for = "password">Password</label>
+					<input type = "password" name = "password"/>
+
+					<button>LOGIN</button>
+				</form>
 			</div>
+
+		<fieldset>
+			<div>
+				Not a member? <a href="socialEntryForm.html">Register</a> here.
+			</div>
+
+			<div>
+				Need to logout? <a href="logout.php">Logout</a> here.
+			</div>
+			</div><br>
+			<div>
+				<h3>Want to see who joined? Take a look here: </h3>
+				<form method = "GET" action = "search.php">
+					<label for = "search">Search</label>
+					<input type = "text" name = "search"/>
+					<button>Search</button>
+				</form>
+			</div>	
 			
 
 			<div id = "footer"></div>
