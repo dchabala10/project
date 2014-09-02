@@ -12,4 +12,5 @@
 
 	foreach($result as $record){
 		echo "User: " . $record["first_name"] . " " . $record["last_name"] . "<br>";
+
 	}
